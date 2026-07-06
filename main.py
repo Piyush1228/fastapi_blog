@@ -35,3 +35,7 @@ def validation_exception_handler(request: Request, exception: RequestValidationE
         status_code=status.HTTP_422_UNPROCESSABLE_CONTENT,
         content={"detail": exception.errors()},
     )
+
+@app.get("/test")
+def testing():
+    return {"message":"hello this is only for testing"}
